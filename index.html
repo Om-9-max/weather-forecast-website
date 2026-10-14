@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check current weather and a five-day forecast for cities worldwide.">
+  <title>SkyCast | Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">☁ SkyCast</div>
+      <span class="tagline">Your weather, at a glance</span>
+    </header>
+
+    <section class="search-section">
+      <h1>Weather Forecast</h1>
+      <p>Discover current weather and the forecast for your city.</p>
+
+      <form id="search-form">
+        <input
+          id="city-input"
+          type="search"
+          placeholder="Enter city, e.g. Bhubaneswar"
+          aria-label="City name"
+          required
+        >
+        <button id="search-button" type="submit">Search</button>
+      </form>
+
+      <button id="location-button" class="location-button" type="button">
+        Try Bhubaneswar
+      </button>
+    </section>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <section id="weather-panel" class="weather-panel" hidden>
+      <div class="current-weather">
+        <div>
+          <p id="location-name" class="location-name"></p>
+          <p id="current-date" class="muted"></p>
+          <div id="weather-icon" class="weather-icon">🌤️</div>
+          <h2><span id="temperature">--</span>°C</h2>
+          <p id="description"></p>
+        </div>
+
+        <div class="details">
+          <div class="detail-card">
+            <span>Feels like</span>
+            <strong id="feels-like">--°C</strong>
+          </div>
+          <div class="detail-card">
+            <span>Humidity</span>
+            <strong id="humidity">--%</strong>
+          </div>
+          <div class="detail-card">
+            <span>Wind speed</span>
+            <strong id="wind">-- km/h</strong>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="forecast-heading">5-Day Forecast</h2>
+      <div id="forecast-list" class="forecast-list"></div>
+    </section>
+
+    <footer>
+      <p>Weather data provided by
+        <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>.
+      </p>
+      <p>SkyCast — A Cloud & DevOps college project.</p>
+    </footer>
+  </main>
+</body>
+</html>
